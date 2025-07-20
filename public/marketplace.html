@@ -1,0 +1,83 @@
+<!-- Filename: marketplace.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - DNFTLY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Reusing the same header for consistency -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="white"/>
+                        <path d="M16 25C20.9706 25 25 20.9706 25 16C25 11.0294 20.9706 7 16 7C11.0294 7 7 11.0294 7 16C7 20.9706 11.0294 25 16 25Z" fill="#6C34E2"/>
+                    </svg>
+                    <span>DNFTLY</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <button class="btn btn-primary">Connect Wallet</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <div class="container">
+            <div class="page-header">
+                <h1>Explore the Marketplace</h1>
+                <p>Discover, collect, and sell extraordinary NFTs from creators around the globe.</p>
+            </div>
+
+            <!-- Marketplace Controls -->
+            <div class="marketplace-controls">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search by NFT name or creator...">
+                </div>
+                <div class="filter-sort-options">
+                    <select id="category-filter">
+                        <option value="All">All Categories</option>
+                        <option value="Art">Art</option>
+                        <option value="Games">Games</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Memes">Memes</option>
+                        <option value="Photography">Photography</option>
+                    </select>
+                    <select id="sort-order">
+                        <option value="recent">Recently Added</option>
+                        <option value="price_asc">Price: Low to High</option>
+                        <option value="price_desc">Price: High to Low</option>
+                    </select>
+                    <button id="apply-filters-btn" class="btn-apply-filters">Apply</button>
+                </div>
+            </div>
+
+            <!-- NFT Grid for the marketplace -->
+            <div class="nft-grid" id="marketplace-grid">
+                <!-- NFT Cards will be injected here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer-main">
+        <div class="container">
+            <p>© 2024 DNFTLY. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Use a separate JS file for marketplace-specific logic -->
+    <script src="js/marketplace.js"></script>
+</body>
+</html>

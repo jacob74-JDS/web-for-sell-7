@@ -1,0 +1,553 @@
+/* --- CSS Variables & Reset --- */
+:root {
+    --bg-dark-purple: #1A0D3E;
+    --bg-gradient: linear-gradient(180deg, #3A1D84 0%, #1A0D3E 100%);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --primary-purple: #6C34E2;
+    --glow-pink: #E838CE;
+    --text-white: #FFFFFF;
+    --text-grey: #BCA9F3;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--bg-gradient);
+    color: var(--text-white);
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- General & Reusable Components --- */
+.btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    font-family: var(--font-family);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--text-white);
+    color: var(--bg-dark-purple);
+}
+
+.btn-primary:hover {
+    background-color: var(--glow-pink);
+    color: var(--text-white);
+    box-shadow: 0 0 15px var(--glow-pink);
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.logo svg {
+    margin-right: 12px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-grey);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-white);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    padding: 60px 0;
+}
+
+.hero-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content .creators-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.creators-info span {
+    font-weight: 600;
+    color: var(--text-grey);
+}
+
+.hero-content h1 {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.hero-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.hero-icons img {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid var(--card-border);
+}
+
+
+.hero-visuals {
+    position: relative;
+    width: 45%;
+}
+.eth-coin {
+    position: absolute;
+    top: -50px;
+    left: 100px;
+    width: 180px;
+    z-index: 10;
+    animation: float 6s ease-in-out infinite;
+}
+
+.visual-card {
+    background: rgba(43, 26, 99, 0.5);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.visual-card img {
+    width: 100%;
+    display: block;
+}
+#card-logos {
+    width: 80%;
+}
+#card-patterns {
+    width: 90%;
+    position: relative;
+    top: -40px;
+    left: 40px;
+}
+
+
+/* --- Partners Section --- */
+.partners-section {
+    padding: 40px 0;
+}
+.partners-section .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--text-grey);
+    font-weight: 600;
+    font-size: 18px;
+}
+.partner-logo-placeholder { display: none; } /* Hide placeholder, use text */
+
+/* --- Collections Section --- */
+.collections-section {
+    padding: 60px 0;
+}
+.collections-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    background-color: var(--card-bg);
+    color: var(--text-grey);
+    padding: 10px 20px;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: var(--primary-purple);
+    color: var(--text-white);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-purple);
+    color: var(--text-white);
+    box-shadow: 0 0 15px rgba(108, 52, 226, 0.7);
+}
+
+.nft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.nft-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 16px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nft-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nft-card .card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.card-info p {
+    color: var(--text-grey);
+}
+.card-info .price {
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.card-bid-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-purple);
+    color: var(--text-white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-bid-btn:hover {
+    background-color: var(--glow-pink);
+}
+
+/* --- More Collections Section --- */
+.more-collections-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.more-collections-section h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.more-collections-section p {
+    color: var(--text-grey);
+    margin-bottom: 30px;
+}
+
+.collection-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.collection-tags span {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* --- Animations --- */
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+/* --- STYLES FOR INNER PAGES (BLOG, COMMUNITY, ETC.) --- */
+
+.page-main {
+    padding: 60px 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: var(--text-grey);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* --- BLOG PAGE STYLES --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-card-content {
+    padding: 24px;
+}
+
+.blog-card-category {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: var(--primary-purple);
+    color: var(--text-white);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.blog-card-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.blog-card-content p {
+    color: var(--text-grey);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more-link {
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.read-more-link:hover {
+    color: var(--glow-pink);
+}
+
+/* --- COMMUNITY PAGE STYLES --- */
+.community-header {
+    padding-bottom: 30px;
+}
+
+.btn-discord {
+    background-color: #5865F2; /* Discord Blurple */
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+.btn-discord:hover {
+    background-color: #4f5bda;
+}
+
+.discussion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.discussion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.discussion-item:hover {
+    border-color: var(--primary-purple);
+    cursor: pointer;
+}
+.discussion-item h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.discussion-item span {
+    font-size: 14px;
+    color: var(--text-grey);
+}
+.discussion-stats {
+    text-align: right;
+}
+.discussion-stats span {
+    margin-left: 20px;
+}
+/* --- MARKETPLACE PAGE STYLES --- */
+.marketplace-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.search-bar {
+    flex-grow: 1;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text-white);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input::placeholder {
+    color: var(--text-grey);
+}
+.search-bar input:focus {
+    border-color: var(--primary-purple);
+}
+
+.filter-sort-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.filter-sort-options select {
+    padding: 12px 16px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-grey);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    cursor: pointer;
+}
+
+.btn-apply-filters {
+    padding: 12px 24px;
+    background-color: var(--primary-purple);
+    color: var(--text-white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-apply-filters:hover {
+    background-color: var(--glow-pink);
+}
+
+/* --- FOOTER STYLES --- */
+.site-footer-main {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-grey);
+}
